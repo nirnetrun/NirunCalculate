@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
 
     <!--Toolbar-->
@@ -11,17 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
-
-
-
-
-
-
-
-
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
 
     <!--Content-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/magin"
+        android:orientation="vertical"
+        android:padding="@dimen/padding">
+
+        <!--ShowText-->
+        <TextView
+            android:id="@+id/textShowName"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/colorPrimaryDark"
+            android:textStyle="bold"
+            android:textSize="@dimen/s1"
+            android:text="Click Show Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--ShowName Botton-->
+        <Button
+            android:id="@+id/btnShowName"
+            android:text="Show Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <!--Calculate-->
+        <Button
+            android:id="@+id/btnCalculate"
+            android:text="Calculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
 
 </LinearLayout>
