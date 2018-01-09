@@ -32,6 +32,7 @@ public class MainFagement extends Fragment{
         calculateController();
 
 
+
     } // Main Method
 
     private void calculateController() {
