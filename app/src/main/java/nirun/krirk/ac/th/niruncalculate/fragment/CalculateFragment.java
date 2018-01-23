@@ -21,6 +21,7 @@ import nirun.krirk.ac.th.niruncalculate.R;
 
 public class CalculateFragment extends Fragment{
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
