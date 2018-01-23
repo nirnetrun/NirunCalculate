@@ -2,10 +2,11 @@ package nirun.krirk.ac.th.niruncalculate;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 
 import nirun.krirk.ac.th.niruncalculate.fragment.MainFagement;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,4 +23,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     } //main method
+
+    @Override
+    public void onClick(View view) {
+
+    }
 }// Main Class

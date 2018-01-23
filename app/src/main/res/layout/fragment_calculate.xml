@@ -34,18 +34,21 @@
 
             <!--Display-->
             <TextView
-                android:textColor="#ffffff"
+                android:maxLines="1"
+                android:id="@+id/txtdisplay"
+                android:textColor="#da1e1e"
                 android:paddingRight="@dimen/padding"
                 android:gravity="end"
                 android:layout_weight="3"
                 android:textStyle="bold"
                 android:textSize="50sp"
-                android:text="12345"
+
                 android:layout_width="0dp"
                 android:layout_height="match_parent" />
 
             <!--Clear Button-->
             <Button
+                android:id="@+id/btnc"
                 android:layout_weight="1"
                 android:textSize="@dimen/h1"
                 android:text="C"
@@ -65,6 +68,7 @@
 
             <!--button 7-->
             <Button
+                android:id="@+id/btn7"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="7"
@@ -74,6 +78,7 @@
 
             <!--button 8-->
             <Button
+                android:id="@+id/btn8"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="8"
@@ -83,6 +88,7 @@
 
             <!--button 9-->
             <Button
+                android:id="@+id/btn9"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="9"
@@ -92,6 +98,7 @@
 
             <!--button /-->
             <Button
+                android:id="@+id/btndiv"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="/"
@@ -111,6 +118,7 @@
 
             <!--Button 4-->
             <Button
+                android:id="@+id/btn4"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="4"
@@ -120,6 +128,7 @@
 
             <!--Button 5-->
             <Button
+                android:id="@+id/btn5"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="5"
@@ -129,6 +138,7 @@
 
             <!--Button 6-->
             <Button
+                android:id="@+id/btn6"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="6"
@@ -138,12 +148,13 @@
 
             <!--Button 4x-->
             <Button
-                android:textStyle="bold"
-                android:textSize="24sp"
-                android:text="x"
-                android:layout_weight="1"
+                android:id="@+id/btnx"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="x"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
 
@@ -160,6 +171,7 @@
 
             <!--Button 1-->
             <Button
+                android:id="@+id/btn1"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="1"
@@ -169,6 +181,7 @@
 
             <!--Button 2-->
             <Button
+                android:id="@+id/btn2"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="2"
@@ -178,6 +191,7 @@
 
             <!--Button 3-->
             <Button
+                android:id="@+id/btn3"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="3"
@@ -187,6 +201,7 @@
 
             <!--Button +-->
             <Button
+                android:id="@+id/btnadd"
                 android:textStyle="bold"
                 android:textSize="24sp"
                 android:text="+"
@@ -207,6 +222,7 @@
 
             <!--Button 0-->
             <Button
+                android:id="@+id/btn0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -216,6 +232,7 @@
 
             <!--Button =-->
             <Button
+                android:id="@+id/btnplus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -225,6 +242,7 @@
 
             <!--Button - -->
             <Button
+                android:id="@+id/btnminus"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
