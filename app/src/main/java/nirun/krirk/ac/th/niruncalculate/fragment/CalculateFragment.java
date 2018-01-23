@@ -27,20 +27,21 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
 //    Explicit
 
     private TextView textView;
-    private Button buttonC, button1, button2, button3,
-            button0, button4, button5, button6, button7,
-            button8, button9,
-            buttonx, buttonadd, buttonplus, buttonminus, buttondiv;
+    private Button buttonC,button1,button2,button3,
+    button0,button4,button5,button6,button7,
+    button8,button9,
+    buttonx,buttonadd,buttonplus,buttonminus,buttondiv;
 
 
-
-    private String displayString ="";
-    private double num1ADouuble, displayADouuble;
+    private String displayString = "";
+    private double num1ADouuble,displayADouuble;
     private String tag = "23Janv1";
-    private boolean addABoolean = false;
+    private boolean addABoolean = false, minusBoolean = false;
+
 
 
     @Override
+
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -76,7 +77,6 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
         buttondiv.setOnClickListener(this);
         buttonx.setOnClickListener(this);
         buttonC.setOnClickListener(this);
-
 
 
     }// Main Method
@@ -182,7 +182,7 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                 showDisplay("6");
                 break;
 
-                case R.id.btn7:
+            case R.id.btn7:
                 showDisplay("7");
                 break;
 
@@ -190,62 +190,69 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
                 showDisplay("8");
                 break;
 
-                case R.id.btn9:
+            case R.id.btn9:
                 showDisplay("9");
                 break;
 
-                case R.id.btn0:
+            case R.id.btn0:
                 showDisplay("0");
                 break;
 
-                case R.id.btnc:
-                    //   Clear Display
-                    clearDisplay();
+            case R.id.btnc:
+                //   Clear Display
+                clearDisplay();
                 break;
 
             case R.id.btnadd:
 
                 addABoolean = true;
 
-                     displayADouuble = Double.parseDouble(displayString);
-                     if (num1ADouuble == 0){
-                         num1ADouuble = displayADouuble;
-                     }else {
-                         num1ADouuble = num1ADouuble + displayADouuble;
-                     }
+                displayADouuble = Double.parseDouble(displayString);
+                if (num1ADouuble == 0) {
+                    num1ADouuble = displayADouuble;
+                } else {
+                    num1ADouuble = num1ADouuble + displayADouuble;
+                }
 
                 Log.d(tag, "num1 ==>" + num1ADouuble);
 
 //                     showDisplay(Double.toString(num1ADouuble));
 
 
-                     clearDisplay();
-                     break;
+                clearDisplay();
+                break;
 
-            case  R.id.btnplus:
+            case R.id.btnplus:
                 displayADouuble = Double.parseDouble(displayString);
 
                 Log.d(tag, "num1Adouble ==>" + num1ADouuble);
                 Log.d(tag, "displayAdouble ==>" + displayADouuble);
                 Log.d(tag, "addABoolean ==>" + addABoolean);
 
-                if (num1ADouuble == 0) {
+                if (addABoolean) {
                     num1ADouuble = num1ADouuble + displayADouuble;
                     addABoolean = false;
 
+                }else if (minusBoolean){
+                    num1ADouuble = num1ADouuble - displayADouuble;
+                    minusBoolean = false;
+
                 }
                 textView.setText(Double.toString(num1ADouuble));
+                displayString = "0";
                 break;
 
-            case  R.id.btnminus:
+            case R.id.btnminus:
+                minusBoolean = true;
 
-                if (num1ADouuble == 0){
+                if (num1ADouuble == 0) {
                     num1ADouuble = Double.parseDouble(displayString);
+
                 } else {
                     num1ADouuble = num1ADouuble - Double.parseDouble(displayString);
                 }
 
-                Log.d(tag, "num1 atbtnminus ==>" + num1ADouuble);
+                Log.d(tag, "num1 btnminus ==>" + num1ADouuble);
                 clearDisplay();
 
                 break;
@@ -253,11 +260,33 @@ public class CalculateFragment extends Fragment implements View.OnClickListener 
         }        //switch
 
 
-
     }
+        // onClick
 
     private void clearDisplay() {
-        textView.setText("");
-        displayString = "";
+
+        if (addABoolean){
+
+            textView.setText("");
+            displayString = "";
+            displayADouuble = 0;
+
+        } else  if (minusBoolean){
+
+            textView.setText("");
+            displayString = "";
+            displayADouuble = 0;
+
+        } else  {
+
+            textView.setText("");
+            displayString = "";
+            displayADouuble = 0;
+            num1ADouuble = 0;
+
+        }
+
+
+
     }
 }       // Maim Class
